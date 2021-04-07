@@ -12,7 +12,7 @@ services:
     - ./dbdata:/var/lib/postgresql/data
   app:
     image: rust:slim
-    command: apt-get update & apt-get install --no-install-recommends -y libpq-dev libsqlite3-dev & rm -rf /var/lib/apt/lists/* & USER=root cargo new --bin app
+    command: apt-get update & apt-get install --no-install-recommends -y libpq-dev libsqlite3-dev & rm -rf /var/lib/apt/lists/* & USER=root cargo new --bin app & cargo install diesel_cli --no-default-features --features postgres
     ports:
     - "8000:8000"
     environment:
