@@ -1,0 +1,1 @@
+insert into people (name,address) values('ndp', 'some where');
